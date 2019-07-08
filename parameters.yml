@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: XXXXXX.mysql.database.azure.com
+    database_port: 3306
+    database_name: sf_demo
+    database_user: USER_NAME@XXXXXX
+    database_password: DB_PASSWORD
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: test

@@ -1,0 +1,28 @@
+imports:
+    - { resource: config.yml }
+
+parameters:
+    env(MICROSOFT_APP_INSIGHTS_INTRUMENTATION_KEY): 122483a7-a435-4b4b-8c78-bc300804d313
+
+doctrine:
+   orm:
+        auto_generate_proxy_classes:  true # <- change to true
+        proxy_dir:            '%kernel.cache_dir%/doctrine/orm/Proxies'
+        proxy_namespace:      Proxies
+    #    metadata_cache_driver: apc
+    #    result_cache_driver: apc
+    #    query_cache_driver: apc
+
+monolog:
+    handlers:
+        main:
+            type: fingers_crossed
+            action_level: error
+            handler: nested
+        nested:
+            type: stream
+            path: '%kernel.logs_dir%/%kernel.environment%.log'
+            level: debug
+        console:
+            type: console
+            process_psr_3_messages: false
